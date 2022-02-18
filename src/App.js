@@ -1,12 +1,19 @@
+import React, {useState} from 'react'
 import image from './images/Image.jpg'
 import Navbar from './components/Navbar'
 import './App.css';
 import Sidebar from './components/Sidebar';
 
-function App() {
+const App = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <div>
-    <Navbar />
+    <Navbar toggle={toggle} />
+    <Sidebar isOpen={isOpen} toggle={toggle} />
     <div className="container form-center">
       <div className="sign-in-form">
           <div className="sign-in-text">

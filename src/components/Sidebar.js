@@ -1,42 +1,50 @@
-import logo from '../images/logo.jpg'
-import dashboard from '../images/Icon (1).jpg'
-import profile from '../images/Icon3.jpg'
-import signUp from '../images/Vector.png'
-import signIn from '../images/Vector.jpg'
+import React from 'react'
+import { FaTimes } from 'react-icons/fa';
+import { BsPersonFill,BsPersonCircle } from 'react-icons/bs';
+import { ImKey} from 'react-icons/im'
+import {GiCube} from 'react-icons/gi'
 
-
-function Sidebar () {
+const Sidebar = ({isOpen, toggle }) => {
     return(
-      <aside className='sidebar show-sidebar'>
-      <div className='sidebar-header'>
-        <img src={logo} className='logo' alt='coding addict' />
-        <button className='close-btn' >
-        
-        </button>
+      <aside class='sidebar show-sidebar' isOpen={isOpen} onClick={toggle}>
+      <div class="sidebar-header">
+          <h1>PURITY UI DASHBOARD</h1>
+          <button className="close-btn" onClick={toggle}>
+            <FaTimes/>
+          </button>
       </div>
-      <ul class="nav-links" id="nav-links">
-          <li class="nav-list">
-            <img src={dashboard} alt="" />
-            <a href="#" class="nav-link">DASHBOARD</a>
+      <ul class='links'>
+          <li>
+            <span>
+              <GiCube/>
+            </span>
+              <a href="#" class="nav-link">DASHBOARD</a>
           </li>
-          <li class="nav-list">
-            <img src={profile} alt="" />
-            <a href="#" class="nav-link">PROFILE</a>
+          <li>
+              <span>
+                <BsPersonFill />
+              </span>
+              <a href="#" class="nav-link">PROFILE</a>
           </li>
-          <li class="nav-list">
-            <img src={signUp} alt="" />
-            <a href="#" class="nav-link">SIGN UP</a>
+          <li>
+              <span>
+                <BsPersonCircle />
+              </span>
+              <a href="#" class="nav-link">SIGN UP</a>
           </li>
-          <li class="nav-list">
-            <img src={signIn} alt="" />
-            <a href="#" class="nav-link">SIGN IN</a>
+          <li>
+              <span>
+                <ImKey />
+              </span>
+              <a href="#" class="nav-link">SIGN IN</a>
+          </li>
+          <li class="btn">
+              <button>
+                  Free Download
+              </button>  
           </li>
       </ul>
-      <div class="nav-button">
-        <button>
-          Free Download
-        </button>     
-      </div>    
+      
     </aside>
     )
 }

@@ -154,7 +154,14 @@ input:focus{
   .bars{
     display: flex;
     padding: 14px 20px;
-
+    color : #4FD1C5;
+    border : none;
+    font-size: 18px;
+    background: transparent;
+    border-color: transparent;
+    transition: all 0.3s linear;
+    cursor: pointer;
+    animation: bounce 2s ease-in-out infinite;
   }
   .nav-links,.nav-button {
     display: none
@@ -207,16 +214,104 @@ input:focus{
 }
 
 
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+
+
+
+/*
+=============== 
+Sidebar
+===============
+*/
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+}
+.sidebar-header h1 {
+    font-size: 20px;
+}
+.close-btn {
+  font-size: 1.75rem;
+  background: transparent;
+  border-color: transparent;
+  transition: all 0.3s linear;
+  color: #4FD1C5;
+  cursor: pointer;
+  margin-top: 0.2rem;
+}
+.close-btn:hover {
+
+}
+.logo {
+  justify-self: center;
+  height: 40px;
+}
+
+.links li a {
+  display: flex;
+  align-items: center;
+  font-size: 20p;
+  text-transform: capitalize;
+  padding: 1rem 1rem;
+  color: #2D3748;
+  transition:all 0.3s linear;
+  letter-spacing: 0.1rem;
+}
+.links a:hover{
+  color: #4FD1C5;
+}
+
+.links li:not(:last-child) {
+    display: flex;
+    padding-left: 20px;  
+}
+.links li:not(:last-child):hover {
+  color: #4FD1C5;
+}
+.links li span{
+    justify-self: center;
+    align-self: center;
+    width: 5%;
+
+}
+
+.btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+}
+.btn button {
+  padding: 14px 15px;
+  color: white;
+  background:#4FD1C5;
+  border: 1px solid #4FD1C5;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
 .sidebar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  background: white;
   display: grid;
+  padding-top: 20px;
   grid-template-rows: auto 1fr auto;
   row-gap: 1rem;
+  box-shadow: 0px 7px 23px rgba(0, 0, 0, 0.151);
+  transition: all 0.3s linear;
   transform: translate(-100%);
+  z-index: 10;
 }
 .show-sidebar {
   transform: translate(0);

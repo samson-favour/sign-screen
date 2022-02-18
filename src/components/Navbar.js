@@ -1,11 +1,12 @@
+import React from 'react'
+import { FaBars } from 'react-icons/fa';
 import logo from '../images/logo.jpg'
 import dashboard from '../images/Icon (1).jpg'
 import profile from '../images/Icon3.jpg'
 import signUp from '../images/Vector.png'
 import signIn from '../images/Vector.jpg'
 
-
-function Navbar () {
+const Navbar = ({toggle}) => {
     return(
         <nav className="navbar">
         <div class="nav-center">
@@ -14,9 +15,9 @@ function Navbar () {
                 <h1>PURITY UI DASHBOARD</h1>
             </div>
             <div>
-            <h3 className='bars'>
-                BARS
-            </h3>
+            <button className='bars sidebar-toggle' onClick={toggle}>
+                <FaBars />
+            </button>
             </div>
             <ul class="nav-links" id="nav-links">
                    
